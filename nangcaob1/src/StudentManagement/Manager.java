@@ -13,7 +13,6 @@ public class Manager {
 		System.out.print(" Enter your choice: ");
 	}
 
-	// Allow user create new student
 	public static void createStudent(int count, ArrayList<Student> ls) {
 		// gioi han so luong nguoi ( toi da 10 nguoi)
 		if (count > 10) {

@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Validation {
 	private final static Scanner in = new Scanner(System.in);
 
-    //check user input number limit
     public static int checkInputIntLimit(int min, int max) {
         //loop until user input correct
         while (true) {

@@ -10,9 +10,8 @@ public class Main {
 		ls.add(new Student("2", "Do Quang Hiep", "Summer", ".net"));
 		ls.add(new Student("3", "Nguyen Xuan Cuong", "Spring", "c/c++"));
 		int count = 3;
-		// loop until user want to exit program
 		while (true) {
-			// Show menu option
+			// Show menu 
 			Manager.menu();
 			int choice = validation.checkInputIntLimit(1, 5);
 			switch (choice) {
