@@ -3,7 +3,7 @@ package baitap;
 import java.util.Scanner;
 
 public class ValidationDataDemo {
-	private static final Scanner in = new Scanner(System.in);
+	public static final Scanner in = new Scanner(System.in);
 
 	public static String checkInputString() {
 		while (true) {
@@ -59,25 +59,25 @@ public class ValidationDataDemo {
 		}
 	}
 
-	public static void main(String[] args) {
-		while (true) {
-			System.out.print("Enter fruit id: ");
-			String fruitId = checkInputString();
-			System.out.print("Enter fruit name: ");
-			String fruitName = checkInputString();
-			System.out.print("Enter price: ");
-			double price = checkInputDouble();
-			System.out.print("Enter quantity: ");
-			int quantity = checkInputInt();
-			System.out.print("Enter origin: ");
-			String origin = checkInputString();
-			System.out.println(fruitId + " " + fruitName + " " + price + " " + quantity + " " + origin);
-			// check user want to continue or not
-			if (checkInputYN() == false) {
-				return;
-			}
-		}
-
-	}
+//	public static void main(String[] args) {
+//		while (true) {
+//			System.out.print("Enter fruit id: ");
+//			String fruitId = checkInputString();
+//			System.out.print("Enter fruit name: ");
+//			String fruitName = checkInputString();
+//			System.out.print("Enter price: ");
+//			double price = checkInputDouble();
+//			System.out.print("Enter quantity: ");
+//			int quantity = checkInputInt();
+//			System.out.print("Enter origin: ");
+//			String origin = checkInputString();
+//			System.out.println(fruitId + " " + fruitName + " " + price + " " + quantity + " " + origin);
+//			// check user want to continue or not
+//			if (checkInputYN() == false) {
+//				return;
+//			}
+//		}
+//
+//	}
 
 }

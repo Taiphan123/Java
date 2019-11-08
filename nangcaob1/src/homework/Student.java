@@ -2,7 +2,7 @@ package homework;
 
 import java.util.Scanner;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	private String id;
 	private String name;
 	private int age;
@@ -46,6 +46,12 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", age=" + age + "]";
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		// TODO Auto-generated method stub
+		return this.name.compareTo(o.name);
 	}
 	
 }

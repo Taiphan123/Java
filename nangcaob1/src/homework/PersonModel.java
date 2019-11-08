@@ -1,6 +1,7 @@
 package homework;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PersonModel<T> {
 	private ArrayList<T> al = new ArrayList<T>();
@@ -33,10 +34,19 @@ public class PersonModel<T> {
 	public static void main(String[] args) {
 		
 		// khoi tao PersonModel<Student>
-		PersonModel<Student> st = new PersonModel<Student>();
-		st.addObject (new Student("AO165122","Phan Tai",20));
-		st.addObject (new Student("AO165170","Phan Huan",22));
-		st.display();
+//		PersonModel<Student> st = new PersonModel<Student>();
+//		st.addObject (new Student("AO165122","Phan Tai",20));
+//		st.addObject (new Student("AO165170","Phan Huan",22));
+		
+		
+		ArrayList<Student> st = new ArrayList<Student>();
+		st.add(new Student("xdasd", "xdasd", 45));
+		st.add(new Student("adasd", "adasd", 45));		
+		Collections.sort(st);
+		for (Student student : st) {
+			System.out.println(student);
+		}
+		//st.display();
 		//khoi tao PersonModel<Employee>
 		PersonModel<Employee> ep = new PersonModel<Employee>();
 		ep.addObject(new Employee("A55483", "Sieu nhan", 10000));
