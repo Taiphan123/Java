@@ -66,7 +66,7 @@ public class FinalTestKienTruc {
                 }
                 case 9:
                     try {
-                        Management.saveProductDB(lo);
+                        Management.saveProductDB(lp);
                     } catch (Exception e) {
                         System.err.println("Not Found");
                     }

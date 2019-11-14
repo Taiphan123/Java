@@ -16,6 +16,8 @@ import java.io.ObjectOutputStream;
 import java.io.RandomAccessFile;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import static java.time.LocalDate.now;
 import java.util.ArrayList;
@@ -159,18 +161,23 @@ class Management {
     }
 
 
-public static void saveProductDB (ArrayList<Order> lo) throws FileNotFoundException, IOException, ClassNotFoundException{
-    //File f = new File ("final.txt");
-    Order stTemp = new Order();
-    FileInputStream fis = new FileInputStream("final.txt");
-    ObjectInputStream ois = new ObjectInputStream(fis);
-    while (stTemp!=null) {
-			stTemp = (Order) ois.readObject();
-			System.out.println(stTemp);
-			}
-    ois.close();
-    fis.close();
+public static void saveProductDB (ArrayList<Product> lp) throws FileNotFoundException, IOException, ClassNotFoundException, SQLException{
+    InsertData(lp);
 
 }
+public static void InsertData(ArrayList<Product> lp) throws SQLException, ClassNotFoundException{
+    Connection connect = getMySQLConnection();
+     Statement statement = connect.createStatement();
+    for (Product product : lp) {
+        statement.executeUpdate("INSERT INTO Product "+"VALUES ("+product.getId()+",'"+product.getName()+"',"+product.getPrice()+")");
+    }
+        connect.close();
+}
 
+public static Connection getMySQLConnection() throws SQLException,
+         ClassNotFoundException {
+    String connectionURL = "jdbc:derby://localhost:1527/MyProductDB1";
+     Connection conn= (Connection) DriverManager.getConnection(connectionURL,"sa","sa");
+     return conn;
+ }
 }
